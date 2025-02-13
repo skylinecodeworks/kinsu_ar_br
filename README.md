@@ -1,4 +1,4 @@
-# Kinsu.mx Website
+# Kinsu BR/AR Website
 
 Welcome to the **Kinsu.mx** website repository. Kinsu is an **insurtech** expanding into **Brazil** and **Argentina**, offering innovative insurance solutions.
 
