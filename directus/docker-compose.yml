@@ -1,0 +1,23 @@
+version: "3"
+services:
+  directus:
+    image: directus/directus:11.3.5
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      - DIRECTUS_CORS=*
+      - SECRET=replace-with-secure-random-value
+      - ADMIN_EMAIL=tom@skylinecodew.com
+      - ADMIN_PASSWORD=secret_password
+      - DB_CLIENT=sqlite3
+      - DB_FILENAME=/directus/database/data.db
+      - WEBSOCKETS_ENABLED=true
+      - CORS_ENABLED=true
+      - CORS_ORIGIN=*
+      - CORS_METHODS=GET,POST,PATCH,DELETE,OPTIONS
+      - CORS_HEADERS=Content-Type,Authorization
+
