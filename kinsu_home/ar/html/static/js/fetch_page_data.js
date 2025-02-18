@@ -1,6 +1,6 @@
-export async function fetchPageData(pageNumber) {
+export async function fetchPageData(url, pageNumber) {
     try {
-        const response = await fetch(`http://127.0.0.1:8055/items/Paginas/${pageNumber}`);
+        const response = await fetch(url + `/items/landing/${pageNumber}`);
         if (!response.ok) {
             throw new Error(`Error al obtener la página ${pageNumber}: ${response.statusText}`);
         }

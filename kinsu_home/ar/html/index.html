@@ -502,38 +502,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		document.addEventListener('siteMapLoaded', () => {
-			console.log("Evento siteMapLoaded detectado.");
-	
-			// Verificamos que pageData y content_1 existan
-			if (window.pageData && window.pageData.content_1) {
-				console.log("pageData encontrado:", window.pageData);
-	
-				// Crear un contenedor temporal para manipular el contenido
-				var tempDiv = document.createElement("div");
-				tempDiv.innerHTML = window.pageData.content_1; // Insertar el contenido como HTML
-	
-				// Extraer solo el contenido sin los <p> envolventes
-				var decodedContent = tempDiv.textContent || tempDiv.innerText; 
-	
-				// Seleccionamos el div con la clase específica
-				var bannerDiv = document.querySelector(".Home_HomeBanner__AizoB");
-	
-				if (bannerDiv) {
-					console.log("Reemplazando contenido del banner.");
-					bannerDiv.innerHTML = ''; // Vaciar el contenido actual
-					bannerDiv.insertAdjacentHTML('beforeend', decodedContent.trim()); // Insertar HTML correctamente interpretado
-				} else {
-					console.error("No se encontró el div del banner.");
-				}
-			} else {
-				console.error("pageData o content_1 no están definidos:", window.pageData);
-			}
-	
-			document.body.style.display = 'block'; // Muestra la web cuando los datos están listos
-		});
-	</script>
+
 	
 	
 	

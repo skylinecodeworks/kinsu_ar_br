@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="/static/media/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page - Kinsurer</title>
     <style>
@@ -302,13 +303,13 @@
         <div class="section-main">
             <!-- Contenido de texto -->
             <div class="text-content">
-                <h3>Genera ganancias prospectando clientes para las mejores aseguradoras del país.</h3>
-                <p>Conviértete en Kinsurer y súmate a la nueva generación de distribuidores de seguros en Argentina. Sin inversión inicial, sin experiencia previa. Solo recomendá y ganá.</p>
+                <h3 id="title"></h3>
+                <p id="subtitle"></p>
                 <br/>
                 <h1>Proximamente</h1>
                 <div class="download-buttons">
-                    <img src="app_store.png" alt="App Store" width="150">
-                    <img src="google_play.png" alt="Google Play" width="150">
+                    <a id="link_google_play" href="#"><img src="app_store.png" alt="App Store" width="150"></a>
+                    <a id="link_app_store" href="#"><img src="google_play.png" alt="Google Play" width="150"></a>
                 </div>
             </div>
         
@@ -319,41 +320,42 @@
                 <input type="email" placeholder="Correo electrónico">
                 <input type="tel" placeholder="Teléfono">
                 <input type="password" placeholder="Contraseña">
-                <button>Inicia tu registro</button>
+                <button id="registration_button">Inicia tu registro</button>
+                <p id="form_message"></p>
             </div>
         </div>
         
         <div class="section-1">
             <div class="image-container">
-                <img src="static/media/image1.jpeg">
+                <img id="image2" src="">
             </div>
             <!-- Sección informativa -->
             <div class="text-content">
-                <h2>¿Qué es un Kinsurer?</h2>
-                <p>Estamos revolucionando la forma en que se venden los seguros en Argentina. Si conocés personas o empresas que necesiten un seguro, podés convertirte en un Kinsurer y generar ingresos por cada recomendación.</p>
+                <h2 id="title2"></h2>
+                <p id="subtitle2"></p>
             </div>
         </div>
 
         <!-- Sección educativa con fondo azul -->
         <div class="blue-section">
             <div class="blue-section-text">
-                <h2>Aprende y crece con todo lo que Kinsu tiene para ti.</h2>
-                <p>No necesitas experiencia en seguros para comenzar. Te capacitamos para que puedas generar ganancias por cada prospecto que conviertas en cliente. Podrás hacer un seguimiento transparente de tus ingresos a través de nuestra plataforma. Es fácil y rápido: solo regístrate, capacítate, comparte y empieza a ganar.</p>
+                <h2 id="title3"></h2>
+                <p id="subtitle3"></p>
             </div>
             <div class="blue-section-image">
-                <img src="static/media/fonos.png">
+                <img id="image3" src="">
             </div>
         </div>
 
         <!-- Sección de compartir -->
         <div class="section-1">
             <div class="image-container">
-                <img src="static/media/fonos2.png">
+                <img id="image4" src="">
             </div>
             <!-- Sección informativa -->
             <div class="text-content">
-                <h2>Comparte y llega a más personas.</h2>
-                <p>Utiliza WhatsApp y tus Redes Sociales para contarle a todos tus conocidos que puedes ofrecerles el mejor cuidado.</p>
+                <h2 id="title4"></h2>
+                <p id="subtitle4"></p>
             </div>
         </div>
 
@@ -361,10 +363,10 @@
         <div class="section-2">
             <div class="icons">
                 <div class="text-content">
-                    <p>Hablemos, estamos a un mensaje de distancia.</p>
+                    <p id="chat_text"></p>
                 </div>
                 <div class="image-container">
-                    <a href="#"><img src="static/media/chat.png" alt="Chat"></a><a href="#"><img src="static/media/calendar.png" alt="Calendario"></a><a href="#"><img src="static/media/email.png" alt="Correo"></a>
+                    <a id="chat1_text" href="#"><img id="chat1_image" src="" alt="Chat"></a><a id="chat2_text" href="#"><img id="chat2_image" src="" alt="Calendario"></a><a id="chat3_text" href="#"><img id="chat3_image" src="" alt="Correo"></a>
                 </div>
             </div>
         </div>
@@ -373,8 +375,11 @@
 
     </div>
     <div class="realfooter">
-        <p>Copyright © 2025 Kinsu - Todos los derechos reservados.</p>
+        <p id="footer"></p>
     </div>
+
+    <script type="module" src="static/js/index.js"></script>
+
 
 </body>
 </html>
