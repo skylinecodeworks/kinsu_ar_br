@@ -1,6 +1,6 @@
-export async function fetchPageData(url, pageNumber) {
+export async function fetchPageData(url, category, pageNumber) {
     try {
-        const response = await fetch(url + `/items/landing/${pageNumber}`);
+        const response = await fetch(url + `/items/${category}/${pageNumber}`);
         if (!response.ok) {
             throw new Error(`Error al obtener la página ${pageNumber}: ${response.statusText}`);
         }

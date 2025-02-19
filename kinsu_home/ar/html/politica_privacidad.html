@@ -32,6 +32,7 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            padding-bottom: 60px; /* Ajustar según la altura del footer */
         }
         .container {
             width: 95%;
@@ -205,18 +206,20 @@
         }
 
         .realfooter {
-            width: 100%;
-            background-color: #4575ba; /* Color azul */
-            color: white;
-            padding: 20px 20px 20px 40px; /* Espaciado interno */
-            text-align: right; /* Alineación a la derecha */
-            font-size: 0.9em;
-            position: relative; /* Mantiene la estructura sin afectar el flujo */
-            bottom: 0;
-        }
-        .realfooter p {
-            margin-right: 80px;
-        }
+    width: 100%;
+    background-color: #4575ba; /* Color azul */
+    color: white;
+    padding: 20px 40px; /* Ajustar el padding */
+    text-align: right; /* Alineación del texto */
+    font-size: 0.9em;
+    position: fixed; /* Fijar en la parte inferior */
+    left: 0;
+    bottom: 0;
+}
+.realfooter p {
+    margin-right: 80px;
+}
+
 
         .icons {
             display: flex;
@@ -297,79 +300,15 @@
     <div class="container">
         <!-- Encabezado -->
         <div class="header">
-            <img src="logo.png" alt="Kinsurer Logo" width="100">
+            <a href="index.html"><img src="logo.png" alt="Kinsurer Logo" width="100"></a>
         </div>
 
         <div class="section-main">
             <!-- Contenido de texto -->
             <div class="text-content">
-                <h3 id="title"></h3>
-                <p id="subtitle"></p>
-                <br/>
-                <h1>Proximamente</h1>
-                <div class="download-buttons">
-                    <a id="link_google_play" href="#"><img src="app_store.png" alt="App Store" width="150"></a>
-                    <a id="link_app_store" href="#"><img src="google_play.png" alt="Google Play" width="150"></a>
-                </div>
+                <h2 id="title"></h3>
+                <p id="politica"></p>
             </div>
-        
-            <!-- Formulario de registro -->
-            <div class="form-container">
-                <h3>Inicia tu camino como Kinsurer.</h3>
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Correo electrónico">
-                <input type="tel" placeholder="Teléfono">
-                <input type="password" placeholder="Contraseña">
-                <button id="registration_button">Inicia tu registro</button>
-                <p id="form_message"></p>
-            </div>
-        </div>
-        
-        <div class="section-1">
-            <div class="image-container">
-                <img id="image2" src="">
-            </div>
-            <!-- Sección informativa -->
-            <div class="text-content">
-                <h2 id="title2"></h2>
-                <p id="subtitle2"></p>
-            </div>
-        </div>
-
-        <!-- Sección educativa con fondo azul -->
-        <div class="blue-section">
-            <div class="blue-section-text">
-                <h2 id="title3"></h2>
-                <p id="subtitle3"></p>
-            </div>
-            <div class="blue-section-image">
-                <img id="image3" src="">
-            </div>
-        </div>
-
-        <!-- Sección de compartir -->
-        <div class="section-1">
-            <div class="image-container">
-                <img id="image4" src="">
-            </div>
-            <!-- Sección informativa -->
-            <div class="text-content">
-                <h2 id="title4"></h2>
-                <p id="subtitle4"></p>
-            </div>
-        </div>
-
-
-        <div class="section-2">
-            <div class="icons">
-                <div class="text-content">
-                    <p id="chat_text"></p>
-                </div>
-                <div class="image-container">
-                    <a id="chat1_text" href="#"><img id="chat1_image" src="" alt="Chat"></a><a id="chat2_text" href="#"><img id="chat2_image" src="" alt="Calendario"></a><a id="chat3_text" href="#"><img id="chat3_image" src="" alt="Correo"></a>
-                </div>
-            </div>
-        </div>
 
 
 
@@ -378,7 +317,7 @@
         <p id="footer"></p>
     </div>
 
-    <script type="module" src="static/js/index.js"></script>
+    <script type="module" src="static/js/politica_privacidad.js"></script>
 
 
 </body>

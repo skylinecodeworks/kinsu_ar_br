@@ -3,7 +3,7 @@ import { fetchPageData } from '/static/js/fetch_page_data.js';
 async function init() {
     var url = 'http://127.0.0.1:8055';
 
-    const pageData = await fetchPageData(url, 1); // Obtiene la página 1 dinámicamente
+    const pageData = await fetchPageData(url, 'landing' ,1); // Obtiene la página 1 dinámicamente
     if (pageData) {
         console.log('Content loaded:', pageData);
         window.pageData = pageData; // ✅ Guardamos en window para acceso global
