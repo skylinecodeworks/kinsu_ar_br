@@ -16,6 +16,8 @@ services:
       - ./html:/usr/share/nginx/html  # Archivos HTML estáticos
     environment:
       - DEFAULT_HOST=localhost  # En producción, usar el dominio real
+    networks:
+      - kinsu_network        
 
   # Generador de certificados SSL en producción (Lets Encrypt)
   letsencrypt:
@@ -34,6 +36,8 @@ services:
       - DEFAULT_EMAIL=tu-email@example.com  # Cambiar en producción
       - LETSENCRYPT_HOST=localhost          # En producción, usar el dominio real
       - LETSENCRYPT_TEST=true                # Quitar en producción para certificados reales
+    networks:
+      - kinsu_network        
 
   # Servidor Python para servir archivos estáticos
   python_server:
@@ -49,6 +53,8 @@ services:
       - VIRTUAL_HOST=python.local             # Cambiar en producción
       - LETSENCRYPT_HOST=localhost
       - LETSENCRYPT_EMAIL=tu-email@example.com
+    networks:
+      - kinsu_network        
 
   # Aplicación de envío de emails con SendGrid
   kinsu_emailer:
@@ -62,6 +68,8 @@ services:
       - VIRTUAL_HOST=mailer.local           # Cambiar por el dominio deseado
       - LETSENCRYPT_HOST=mailer.local
       - LETSENCRYPT_EMAIL=tu-email@example.com
+    networks:
+      - kinsu_network        
 
   # Servicio Directus integrado al proyecto principal
   directus:
@@ -70,8 +78,8 @@ services:
     ports:
       - "8055:8055"
     volumes:
-      - ./directus/database:/directus/database
-      - ./directus/uploads:/directus/uploads
+      - ../../../database:/directus/database
+      - ../../../uploads:/directus/uploads
       - ./directus/extensions:/directus/extensions
     environment:
       - DIRECTUS_CORS=*
@@ -85,4 +93,9 @@ services:
       - CORS_ORIGIN=*
       - CORS_METHODS=GET,POST,PATCH,DELETE,OPTIONS
       - CORS_HEADERS=Content-Type,Authorization
+    networks:
+      - kinsu_network        
+networks:
+  kinsu_network:
+    driver: bridge
 
