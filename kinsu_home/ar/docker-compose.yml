@@ -46,7 +46,7 @@ services:
     expose:
       - "8000"
     environment:
-      - VIRTUAL_HOST=python.local             # Cambiar en producción
+      - VIRTUAL_HOST=localhost             # Cambiar en producción
       - LETSENCRYPT_HOST=localhost
       - LETSENCRYPT_EMAIL=tu-email@example.com
 
