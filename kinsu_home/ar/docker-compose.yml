@@ -12,10 +12,10 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./certs:/etc/nginx/certs:rw  # En producción, Lets Encrypt manejará los certificados
-      - ./vhost.d:/etc/nginx/vhost.d  # Aquí puedes personalizar configuraciones por dominio
+      - ./vhost.d:/etc/nginx/vhost.d  # Personalización por dominio
       - ./html:/usr/share/nginx/html  # Archivos HTML estáticos
     environment:
-      - DEFAULT_HOST=localhost  # 📌 En producción, usar tu dominio (ej: example.com)
+      - DEFAULT_HOST=localhost  # En producción, usar el dominio real
 
   # Generador de certificados SSL en producción (Lets Encrypt)
   letsencrypt:
@@ -25,16 +25,15 @@ services:
     depends_on:
       - nginx
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro  # 📌 Asegurar que este volumen está bien montado
-      - ./certs:/etc/nginx/certs:rw # Lets Encrypt almacena aquí los certificados en producción
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./certs:/etc/nginx/certs:rw
       - ./vhost.d:/etc/nginx/vhost.d
       - ./html:/usr/share/nginx/html
     environment:
       - NGINX_PROXY_CONTAINER=nginx_proxy
       - DEFAULT_EMAIL=tu-email@example.com  # Cambiar en producción
-      - LETSENCRYPT_HOST=localhost # En producción, usar tu dominio real
-      - LETSENCRYPT_TEST=true  # Quitar en producción para emitir certificados reales
-
+      - LETSENCRYPT_HOST=localhost          # En producción, usar el dominio real
+      - LETSENCRYPT_TEST=true                # Quitar en producción para certificados reales
 
   # Servidor Python para servir archivos estáticos
   python_server:
@@ -47,6 +46,43 @@ services:
     expose:
       - "8000"
     environment:
-      - VIRTUAL_HOST=localhost  # En producción, cambiar por el dominio real
+      - VIRTUAL_HOST=localhost             # Cambiar en producción
       - LETSENCRYPT_HOST=localhost
       - LETSENCRYPT_EMAIL=tu-email@example.com
+
+  # Aplicación de envío de emails con SendGrid
+  kinsu_emailer:
+    build:
+      context: ./kinsu_emailer
+    container_name: kinsu_emailer
+    restart: always
+    ports:
+      - "8001:80"
+    environment:
+      - VIRTUAL_HOST=mailer.local           # Cambiar por el dominio deseado
+      - LETSENCRYPT_HOST=mailer.local
+      - LETSENCRYPT_EMAIL=tu-email@example.com
+
+  # Servicio Directus integrado al proyecto principal
+  directus:
+    image: directus/directus:11.3.5
+    container_name: directus
+    ports:
+      - "8055:8055"
+    volumes:
+      - ./directus/database:/directus/database
+      - ./directus/uploads:/directus/uploads
+      - ./directus/extensions:/directus/extensions
+    environment:
+      - DIRECTUS_CORS=*
+      - SECRET=replace-with-secure-random-value
+      - ADMIN_EMAIL=tom@skylinecodew.com
+      - ADMIN_PASSWORD=secret_password
+      - DB_CLIENT=sqlite3
+      - DB_FILENAME=/directus/database/data.db
+      - WEBSOCKETS_ENABLED=true
+      - CORS_ENABLED=true
+      - CORS_ORIGIN=*
+      - CORS_METHODS=GET,POST,PATCH,DELETE,OPTIONS
+      - CORS_HEADERS=Content-Type,Authorization
+
