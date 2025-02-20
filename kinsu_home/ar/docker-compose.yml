@@ -15,7 +15,7 @@ services:
       - ./vhost.d:/etc/nginx/vhost.d  # Personalización por dominio
       - ./html:/usr/share/nginx/html  # Archivos HTML estáticos
     environment:
-      - DEFAULT_HOST=localhost  # En producción, usar el dominio real
+      - DEFAULT_HOST=3.223.253.234  # En producción, usar el dominio real
     networks:
       - kinsu_network        
 
@@ -50,7 +50,7 @@ services:
     expose:
       - "8000"
     environment:
-      - VIRTUAL_HOST=python.local             # Cambiar en producción
+      - VIRTUAL_HOST=remote           # Cambiar en producción
       - LETSENCRYPT_HOST=localhost
       - LETSENCRYPT_EMAIL=tu-email@example.com
     networks:
