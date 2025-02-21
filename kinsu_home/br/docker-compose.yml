@@ -15,7 +15,7 @@ services:
       - ./vhost.d:/etc/nginx/vhost.d  # Personalización por dominio
       - ./html:/usr/share/nginx/html  # Archivos HTML estáticos
     environment:
-      - DEFAULT_HOST=3.223.253.234  # En producción, usar el dominio real
+      - DEFAULT_HOST=44.194.95.25  # En producción, usar el dominio real
     networks:
       - kinsu_network        
 

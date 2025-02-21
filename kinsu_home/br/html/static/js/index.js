@@ -1,7 +1,7 @@
 import { fetchPageData } from '/static/js/fetch_page_data.js';
 
 async function init() {
-    var url = 'http://3.223.253.234:8055';
+    var url = 'http://44.194.95.25:8055';
 
     const pageData = await fetchPageData(url, 'landing' ,1); // Obtiene la página 1 dinámicamente
     if (pageData) {
@@ -85,22 +85,22 @@ function setupRegistrationForm(url) {
 
         // Validaciones
         if (!name || !email || !phone || !password) {
-            showMessage("Todos los campos son obligatorios.");
+            showMessage("Todos os campos são obrigatórios.");
             return;
         }
 
         if (!isValidEmail(email)) {
-            showMessage("El correo electrónico no es válido.");
+            showMessage("O e-mail não é válido.");
             return;
         }
 
         if (!isValidPhone(phone)) {
-            showMessage("El teléfono debe contener solo números y tener al menos 7 dígitos.");
+            showMessage("O número de telefone deve conter apenas números e ter pelo menos 7 dígitos.");
             return;
         }
 
         if (!isValidPassword(password)) {
-            showMessage("La contraseña debe tener al menos 8 caracteres, incluir un número y un carácter especial.");
+            showMessage("A senha deve ter pelo menos 8 caracteres, incluir um número e um caractere especial.");
             return;
         }
 
@@ -118,15 +118,15 @@ function setupRegistrationForm(url) {
             const result = await response;
 
             if (result.status == '204') {
-                showMessage("Registro exitoso. ¡Bienvenido!", true);
+                showMessage("Registro realizado com sucesso. Bem-vindo!", true);
             } else {
 
-                showMessage("El registro no es posible.");
+                showMessage("O registro não é possível.");
 
             }
         } catch (error) {
             console.error("Error en la solicitud:", error);
-            showMessage("Ocurrió un error en el registro.");
+            showMessage("Ocorreu um erro durante o registro.");
         }
     });
 }

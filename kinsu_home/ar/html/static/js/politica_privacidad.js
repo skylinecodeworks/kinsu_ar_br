@@ -1,7 +1,7 @@
 import { fetchPageData } from '/static/js/fetch_page_data.js';
 
 async function init() {
-    var url = 'http://127.0.0.1:8055';
+    var url = 'http://3.223.253.234:8055';
 
     const pageData = await fetchPageData(url, 'politica_privacidad' ,1); // Obtiene la página 1 dinámicamente
     if (pageData) {
