@@ -1,7 +1,7 @@
 import { fetchPageData } from '/static/js/fetch_page_data.js';
 
 async function init() {
-    var url = 'http://44.194.95.25:8055';
+    var url = 'https://kinsu.app/app';
 
     const pageData = await fetchPageData(url, 'politica_privacidad' ,1); // Obtiene la página 1 dinámicamente
     if (pageData) {
