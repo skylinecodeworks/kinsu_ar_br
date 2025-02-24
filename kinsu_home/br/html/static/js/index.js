@@ -1,7 +1,7 @@
 import { fetchPageData } from '/static/js/fetch_page_data.js';
 
 async function init() {
-    var url = 'http://44.194.95.25:8055';
+    var url = 'https://kinsu.app/app';
 
     const pageData = await fetchPageData(url, 'landing' ,1); // Obtiene la página 1 dinámicamente
     if (pageData) {
@@ -117,7 +117,7 @@ function setupRegistrationForm(url) {
 
             const result = await response;
 
-            if (result.status == '204') {
+            if (result.status >= 200 && result.status < 300) {
                 showMessage("Registro realizado com sucesso. Bem-vindo!", true);
             } else {
 

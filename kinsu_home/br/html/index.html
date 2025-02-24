@@ -205,7 +205,6 @@
         }
 
         .realfooter {
-            width: 100%;
             background-color: #4575ba; /* Color azul */
             color: white;
             padding: 20px 20px 20px 40px; /* Espaciado interno */
@@ -250,57 +249,83 @@
             width: 40px;
         }
         @media (max-width: 768px) {
-            .section-main {
+            .section-1,
+            .section-main,
+            .blue-section {
                 flex-direction: column;
                 text-align: center;
             }
+
+            .section-1 {
+                gap: 20px;
+            }
+
+            .blue-section {
+                padding: 30px;
+            }
+
+            .blue-section-text,
+            .blue-section-image,
             .text-content {
                 text-align: center;
             }
+
             .form-container {
                 max-width: 100%;
                 width: 90%;
             }
+            .realfooter {
+                background-color: #4575ba; /* Color azul */
+                color: white;
+                padding: 20px 20px 20px 40px; /* Espaciado interno */
+                text-align: right; /* Alineación a la derecha */
+                font-size: 0.9em;
+                position: relative; /* Mantiene la estructura sin afectar el flujo */
+                bottom: 0;
+        	width: 90%;
+            }
+            .icons {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        
         }
+
         @media (max-width: 600px) {
             .text-content h3 {
                 font-size: 2rem;
             }
+        
             .text-content p {
                 font-size: 1rem;
             }
+
             .section h1 {
                 font-size: 1.8em;
             }
+
             .download-buttons img {
                 width: 120px; /* Reducir tamaño de los botones */
             }
         }
+
         @media (max-width: 500px) {
+            .section-1 {
+                gap: 20px;
+            }
+
             .icons {
                 flex-direction: column;
                 gap: 10px;
             }
+
             .icons img {
                 width: 30px;
                 height: 30px;
             }
         }
-        @media (max-width: 768px) {
-            .blue-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px;
-            }
-
-            .blue-section-text {
-                text-align: center;
-            }
-
-            .blue-section-image {
-                text-align: center;
-            }
-        }
+	
     </style>
 </head>
 <body>
@@ -377,7 +402,7 @@
                     <p id="chat_text"></p>
                 </div>
                 <div class="image-container">
-                    <a id="chat1_text" href="#"><img id="chat1_image" src="" alt="Chat"></a><a id="chat2_text" href="#"><img id="chat2_image" src="" alt="Calendario"></a><a id="chat3_text" href="#"><img id="chat3_image" src="" alt="Correo"></a>
+                    <a id="chat1_text" href="#" target="_blank"><img id="chat1_image" src="" alt="Chat"></a><a id="chat2_text" href="#" target="_blank"><img id="chat2_image" src="" alt="Calendario"></a><a id="chat3_text" href="#" target="_blank"><img id="chat3_image" src="" alt="Correo"></a>
                 </div>
             </div>
         </div>
