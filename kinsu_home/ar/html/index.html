@@ -205,7 +205,6 @@
         }
 
         .realfooter {
-            width: 100%;
             background-color: #4575ba; /* Color azul */
             color: white;
             padding: 20px 20px 20px 40px; /* Espaciado interno */
@@ -249,58 +248,68 @@
             flex: 1;
             width: 40px;
         }
-        @media (max-width: 768px) {
-            .section-main {
-                flex-direction: column;
-                text-align: center;
-            }
-            .text-content {
-                text-align: center;
-            }
-            .form-container {
-                max-width: 100%;
-                width: 90%;
-            }
-        }
-        @media (max-width: 600px) {
-            .text-content h3 {
-                font-size: 2rem;
-            }
-            .text-content p {
-                font-size: 1rem;
-            }
-            .section h1 {
-                font-size: 1.8em;
-            }
-            .download-buttons img {
-                width: 120px; /* Reducir tamaño de los botones */
-            }
-        }
-        @media (max-width: 500px) {
-            .icons {
-                flex-direction: column;
-                gap: 10px;
-            }
-            .icons img {
-                width: 30px;
-                height: 30px;
-            }
-        }
-        @media (max-width: 768px) {
-            .blue-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px;
-            }
+@media (max-width: 768px) {
+    .section-1,
+    .section-main,
+    .blue-section {
+        flex-direction: column;
+        text-align: center;
+    }
 
-            .blue-section-text {
-                text-align: center;
-            }
+    .section-1 {
+        gap: 20px;
+    }
 
-            .blue-section-image {
-                text-align: center;
-            }
-        }
+    .blue-section {
+        padding: 30px;
+    }
+
+    .blue-section-text,
+    .blue-section-image,
+    .text-content {
+        text-align: center;
+    }
+
+    .form-container {
+        max-width: 100%;
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .text-content h3 {
+        font-size: 2rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+    }
+
+    .section h1 {
+        font-size: 1.8em;
+    }
+
+    .download-buttons img {
+        width: 120px; /* Reducir tamaño de los botones */
+    }
+}
+
+@media (max-width: 500px) {
+    .section-1 {
+        gap: 20px;
+    }
+
+    .icons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .icons img {
+        width: 30px;
+        height: 30px;
+    }
+}
+	
     </style>
 </head>
 <body>
