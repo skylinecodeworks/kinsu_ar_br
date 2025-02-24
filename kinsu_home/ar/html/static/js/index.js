@@ -117,7 +117,7 @@ function setupRegistrationForm(url) {
 
             const result = await response;
 
-            if (result.status == '204') {
+            if (result.status >= 200 && result.status < 300) {
                 showMessage("Registro exitoso. ¡Bienvenido!", true);
             } else {
 
